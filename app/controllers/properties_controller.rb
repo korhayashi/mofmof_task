@@ -1,7 +1,7 @@
 class PropertiesController < ApplicationController
   def new
     @property = Property.new
-    2.times { @property.nearest_station.build }
+    @property.nearest_stations.build
   end
 
   def create
@@ -19,8 +19,7 @@ class PropertiesController < ApplicationController
         :address,
         :age,
         :note,
-        nearest_station1_attribute: [:route_name, :station_name, :time],
-        nearest_station2_attribute: [:route_name, :station_name, :time]
+        nearest_stations_attributes: []#: [:route_name, :station_name, :time]
       )
     end
 end

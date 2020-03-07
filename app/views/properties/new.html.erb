@@ -14,7 +14,7 @@
   <hr>
 
   <h4>最寄り駅1</h4>
-  <%= f.fields_for :nearest_station1 do |ns1| %>
+  <%= f.fields_for :nearest_stations do |ns1| %>
     <%= ns1.label :route_name, '路線名' %><br>
     <%= ns1.text_field :route_name %><br>
     <%= ns1.label :station_name, '駅名' %><br>
@@ -24,7 +24,7 @@
   <% end %>
 
   <h4>最寄り駅2</h4>
-  <%= f.fields_for :nearest_station2 do |ns2| %>
+  <%= f.fields_for :nearest_stations do |ns2| %>
     <%= ns2.label :route_name, '路線名' %><br>
     <%= ns2.text_field :route_name %><br>
     <%= ns2.label :station_name, '駅名' %><br>
