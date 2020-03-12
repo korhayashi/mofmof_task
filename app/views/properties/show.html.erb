@@ -19,9 +19,9 @@
   <%= @property.note %>
 </p>
 
-<hr>
-
 <% if @nearest_stations.present? %>
+  <hr>
+  
   <% @nearest_stations.each_with_index do |nearest_station, i| %>
     <h4>
       最寄り駅
