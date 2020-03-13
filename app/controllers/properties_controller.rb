@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :set_nearest_stations, only: [:show, :edit, :update]
 
   def new
     @property = Property.new
@@ -18,7 +19,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @nearest_stations = @property.nearest_stations
+
   end
 
   def edit
@@ -26,7 +27,11 @@ class PropertiesController < ApplicationController
   end
 
   def update
-
+    if @property.update(property_params)
+      redirect_to properties_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -37,6 +42,10 @@ class PropertiesController < ApplicationController
   private
     def set_property
       @property = Property.find(params[:id])
+    end
+
+    def set_nearest_stations
+      @nearest_stations = @property.nearest_stations
     end
 
     def property_params
