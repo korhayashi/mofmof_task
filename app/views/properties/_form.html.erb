@@ -1,4 +1,14 @@
 <%= form_with(model: @property, local: true) do |f| %>
+  <% if @property.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @property.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
   <%= f.label :property_name, '物件名' %><br>
   <%= f.text_field :property_name %><br>
   <%= f.label :rent, '賃料' %><br>

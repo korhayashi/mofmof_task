@@ -16,4 +16,8 @@
 #
 class NearestStation < ApplicationRecord
   belongs_to :property
+
+  validates :route_name, presence: true, on: :update
+  validates :satation_name, presence: true, on: :update
+  validates :time, presence: true, on: :update
 end
