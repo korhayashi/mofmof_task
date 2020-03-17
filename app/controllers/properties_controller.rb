@@ -11,6 +11,8 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     if @property.save
       redirect_to properties_path
+    else
+      render :new
     end
   end
 
@@ -28,6 +30,7 @@ class PropertiesController < ApplicationController
   end
 
   def update
+    @property.nearest_stations.build
     if @property.update(property_params)
       redirect_to properties_path
     else
