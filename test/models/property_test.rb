@@ -3,11 +3,11 @@
 # Table name: properties
 #
 #  id            :integer          not null, primary key
-#  address       :string
-#  age           :integer
-#  note          :text
-#  property_name :string
-#  rent          :integer
+#  address       :string           not null
+#  age           :integer          not null
+#  note          :text             not null
+#  property_name :string           not null
+#  rent          :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
