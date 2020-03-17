@@ -12,6 +12,7 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to properties_path
     else
+      2.times { @property.nearest_stations.build }
       render :new
     end
   end
@@ -30,10 +31,10 @@ class PropertiesController < ApplicationController
   end
 
   def update
-    @property.nearest_stations.build
     if @property.update(property_params)
       redirect_to properties_path
     else
+      @property.nearest_stations.build
       render :edit
     end
   end
