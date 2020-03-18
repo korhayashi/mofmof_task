@@ -27,7 +27,6 @@ class PropertiesController < ApplicationController
 
   def edit
     @property.nearest_stations.build
-    # binding.irb
   end
 
   def update
